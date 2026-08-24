@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+version="$(<"$repo_root/.vale-version")"
+install_dir="$HOME/.local/bin"
+vale="$install_dir/vale"
+
+packages=()
+command -v python3 >/dev/null || packages+=(python3)
+command -v curl >/dev/null || packages+=(curl ca-certificates)
+command -v tar >/dev/null || packages+=(tar)
+command -v sha256sum >/dev/null || packages+=(coreutils)
+if ((${#packages[@]})); then
+  mapfile -t packages < <(printf '%s\n' "${packages[@]}" | sort -u)
+  sudo apt-get update
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "${packages[@]}"
+fi
+
+case "$(uname -m)" in
+  x86_64) asset="vale_${version}_Linux_64-bit.tar.gz" ;;
+  aarch64 | arm64) asset="vale_${version}_Linux_arm64.tar.gz" ;;
+  *) echo "Unsupported architecture: $(uname -m)" >&2; exit 1 ;;
+esac
+
+if [[ ! -x "$vale" ]] || [[ "$($vale --version)" != "vale version $version" ]]; then
+  echo "Installing Vale $version"
+  temporary="$(mktemp -d)"
+  trap 'rm -rf "$temporary"' EXIT
+  release="https://github.com/vale-cli/vale/releases/download/v${version}"
+  curl -fsSLo "$temporary/checksums.txt" "$release/vale_${version}_checksums.txt"
+  curl -fsSLo "$temporary/$asset" "$release/$asset"
+  (
+    cd "$temporary"
+    grep -F "  $asset" checksums.txt | sha256sum --check --strict -
+  )
+  tar -xzf "$temporary/$asset" -C "$temporary" vale
+  mkdir -p "$install_dir"
+  install -m 0755 "$temporary/vale" "$vale"
+fi
+
+"$vale" --version
+python3 --version

@@ -1,0 +1,33 @@
+{
+  "code-and-mdx-negative.mdx": [],
+  "filler-negative.md": [],
+  "filler-positive.md": [
+    ["WriteSimply.Filler", "It is important to note that", null],
+    ["WriteSimply.Filler", "It should be noted that", null],
+    ["WriteSimply.Filler", "It is worth noting that", null],
+    ["WriteSimply.Filler", "Needless to say", null],
+    ["WriteSimply.Filler", "As a matter of fact", null]
+  ],
+  "plain-words-negative.md": [],
+  "plain-words-positive.md": [
+    ["WriteSimply.PlainWords", "Utilize", "Use"],
+    ["WriteSimply.PlainWords", "utilization", "use"],
+    ["WriteSimply.PlainWords", "prior to", "before"],
+    ["WriteSimply.PlainWords", "subsequent to", "after"],
+    ["WriteSimply.PlainWords", "in order to", "to"],
+    ["WriteSimply.PlainWords", "in the event that", "if"],
+    ["WriteSimply.PlainWords", "due to the fact that", "because"],
+    ["WriteSimply.PlainWords", "for the purpose of", "to"],
+    ["WriteSimply.PlainWords", "with the exception of", "except"],
+    ["WriteSimply.PlainWords", "at this point in time", "now"],
+    ["WriteSimply.PlainWords", "has the ability to", "can"],
+    ["WriteSimply.PlainWords", "is able to", "can"],
+    ["WriteSimply.PlainWords", "A large number of", "Many"],
+    ["WriteSimply.PlainWords", "A majority of", "Most of"]
+  ],
+  "sentence-length-negative.md": [],
+  "sentence-length-positive.md": [
+    ["WriteSimply.SentenceLength", "The", null]
+  ],
+  "technical-prose-negative.md": []
+}

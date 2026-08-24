@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  vale-package:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install pinned Vale
+        run: .agents/setup
+      - name: Test package and fixtures
+        run: VALE="$HOME/.local/bin/vale" python3 tests/test.py
+      - name: Build release archive
+        run: python3 scripts/package.py dist/WriteSimply.zip

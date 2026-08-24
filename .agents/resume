@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+version="$(<"$repo_root/.vale-version")"
+vale="$HOME/.local/bin/vale"
+
+if [[ ! -x "$vale" ]]; then
+  echo "Vale is missing; run .agents/setup" >&2
+  exit 1
+fi
+if [[ "$($vale --version)" != "vale version $version" ]]; then
+  echo "Vale does not match .vale-version; run .agents/setup" >&2
+  exit 1
+fi
+command -v python3 >/dev/null
+
+echo "WriteSimply environment ready: Vale $version"
