@@ -1,0 +1,20 @@
+extends: substitution
+message: "Use the direct verb '%s' instead of '%s'."
+level: suggestion
+ignorecase: true
+capitalize: true
+action:
+  name: replace
+swap:
+  make use of: use
+  makes use of: uses
+  made use of: used
+  making use of: using
+  take into consideration: consider
+  takes into consideration: considers
+  took into consideration: considered
+  taking into consideration: considering
+  give consideration to: consider
+  gives consideration to: considers
+  gave consideration to: considered
+  giving consideration to: considering

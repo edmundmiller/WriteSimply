@@ -1,5 +1,20 @@
 {
   "code-and-mdx-negative.mdx": [],
+  "direct-verbs-negative.md": [],
+  "direct-verbs-positive.md": [
+    ["WriteSimply.DirectVerbs", "Make use of", "Use"],
+    ["WriteSimply.DirectVerbs", "makes use of", "uses"],
+    ["WriteSimply.DirectVerbs", "made use of", "used"],
+    ["WriteSimply.DirectVerbs", "making use of", "using"],
+    ["WriteSimply.DirectVerbs", "Take into consideration", "Consider"],
+    ["WriteSimply.DirectVerbs", "takes into consideration", "considers"],
+    ["WriteSimply.DirectVerbs", "took into consideration", "considered"],
+    ["WriteSimply.DirectVerbs", "taking into consideration", "considering"],
+    ["WriteSimply.DirectVerbs", "Give consideration to", "Consider"],
+    ["WriteSimply.DirectVerbs", "gives consideration to", "considers"],
+    ["WriteSimply.DirectVerbs", "gave consideration to", "considered"],
+    ["WriteSimply.DirectVerbs", "giving consideration to", "considering"]
+  ],
   "filler-negative.md": [],
   "filler-positive.md": [
     ["WriteSimply.Filler", "It is important to note that", null],
@@ -24,6 +39,13 @@
     ["WriteSimply.PlainWords", "is able to", "can"],
     ["WriteSimply.PlainWords", "A large number of", "Many"],
     ["WriteSimply.PlainWords", "A majority of", "Most of"]
+  ],
+  "redundancy-negative.md": [],
+  "redundancy-positive.md": [
+    ["WriteSimply.Redundancy", "added bonus", "bonus"],
+    ["WriteSimply.Redundancy", "basic fundamentals", "fundamentals"],
+    ["WriteSimply.Redundancy", "completely unanimous", "unanimous"],
+    ["WriteSimply.Redundancy", "unexpected surprise", "surprise"]
   ],
   "sentence-length-negative.md": [],
   "sentence-length-positive.md": [

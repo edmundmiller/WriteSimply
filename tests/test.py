@@ -39,6 +39,10 @@ def main() -> None:
         temp = Path(temporary)
         package = temp / "WriteSimply.zip"
         run("python3", str(ROOT / "scripts/package.py"), str(package))
+        second_package = temp / "WriteSimply-second.zip"
+        run("python3", str(ROOT / "scripts/package.py"), str(second_package))
+        if package.read_bytes() != second_package.read_bytes():
+            raise AssertionError("consecutive package builds are not reproducible")
 
         consumer = temp / "consumer"
         fixtures = consumer / "fixtures"

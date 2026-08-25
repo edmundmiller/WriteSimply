@@ -10,7 +10,14 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 STYLE = ROOT / "WriteSimply"
-EXPECTED = {"Filler.yml", "PlainWords.yml", "SentenceLength.yml", "meta.json"}
+EXPECTED = {
+    "DirectVerbs.yml",
+    "Filler.yml",
+    "PlainWords.yml",
+    "Redundancy.yml",
+    "SentenceLength.yml",
+    "meta.json",
+}
 
 
 def main() -> None:
