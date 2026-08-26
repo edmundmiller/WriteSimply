@@ -48,6 +48,11 @@ def main() -> None:
         fixtures = consumer / "fixtures"
         fixtures.mkdir(parents=True)
         shutil.copytree(ROOT / "tests/fixtures", fixtures, dirs_exist_ok=True)
+        documentation = consumer / "documentation"
+        documentation.mkdir()
+        documentation_files = sorted(ROOT.glob("*.md"))
+        for source in documentation_files:
+            shutil.copy2(source, documentation / source.name)
         (consumer / ".vale.ini").write_text(
             "StylesPath = styles\n"
             "MinAlertLevel = suggestion\n"
@@ -99,7 +104,24 @@ def main() -> None:
                         f"unexpected sentence count: {alert['Message']!r}"
                     )
 
-    print(f"PASS: Vale {expected_version}; sync and {len(expected)} fixtures verified")
+        docs_result = run(
+            VALE,
+            "--output=JSON",
+            *[str(documentation / source.name) for source in documentation_files],
+            cwd=consumer,
+        )
+        docs_alerts = json.loads(docs_result.stdout or "{}")
+        if docs_alerts:
+            findings = {
+                Path(path).name: [alert["Check"] for alert in alerts]
+                for path, alerts in docs_alerts.items()
+            }
+            raise AssertionError(f"documentation has style findings: {findings!r}")
+
+    print(
+        f"PASS: Vale {expected_version}; sync, {len(expected)} fixtures, "
+        f"and {len(documentation_files)} documentation files verified"
+    )
 
 
 if __name__ == "__main__":

@@ -150,9 +150,10 @@ WriteSimply/
 
 `scripts/package.py` creates `WriteSimply.zip` with that directory at the
 archive root, which is the layout `vale sync` expects. `tests/test.py` builds
-the archive twice and requires byte-identical output, installs it into a
-temporary consumer with `vale sync`, compares the installed files byte for
-byte, and checks exact positive and negative fixture results.
+the archive twice and requires byte-identical output. It installs the archive
+into a temporary consumer with `vale sync`, compares the installed files byte
+for byte, checks exact fixture results, and lints this project's Markdown with
+the installed package.
 
 ## Develop and test
 
@@ -203,6 +204,9 @@ Create an annotated tag such as `v1.0.0`, push it only with approval, and
 publish `dist/WriteSimply.zip` as the release asset. Consumers can then replace
 the example URL with that exact tag. A version bump means changing the pinned
 URL and running `vale sync` again.
+
+After the first approved release, follow [`DISCOVERY.md`](DISCOVERY.md) to add
+the GitHub topic and prepare the Vale Package Explorer catalog pull request.
 
 ## Provenance and license
 
