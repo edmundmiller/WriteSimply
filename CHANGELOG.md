@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.0 - 2026-08-26
+
 ### Added
 
 - `WriteSimply.DirectVerbs`, with exact substitutions for inflections of
