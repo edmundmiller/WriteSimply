@@ -90,6 +90,10 @@ Commit `.vale.ini`, but ignore the generated `.vale/styles/` directory. Use
 the tagged release URL rather than a `latest` URL so rule updates cannot
 change consumer results unexpectedly.
 
+See the [integrations guide](INTEGRATIONS.md) to run WriteSimply before commits
+with `prek`, show findings in editors through Vale LSP, or check AI-assisted
+changes through Vale MCP.
+
 The same configuration works in `edmundmiller.dev` and
 `nascent-manuscript`. Each repository should keep its own formats, vocabulary,
 and local rules, then add `WriteSimply` to the applicable `BasedOnStyles`
