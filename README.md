@@ -70,7 +70,7 @@ Add a release URL to the consumer repository's `.vale.ini`:
 ```ini
 StylesPath = .vale/styles
 MinAlertLevel = suggestion
-Packages = https://github.com/edmundmiller/write-simply/releases/download/v1.0.0/WriteSimply.zip
+Packages = https://github.com/edmundmiller/WriteSimply/releases/download/v1.0.0/WriteSimply.zip
 
 IgnoredScopes = code, tt, img, url, a
 SkippedScopes = script, style, pre, figure, code
@@ -209,8 +209,8 @@ publish `dist/WriteSimply.zip` as the release asset. Consumers can then replace
 the example URL with that exact tag. A version bump means changing the pinned
 URL and running `vale sync` again.
 
-After the first approved release, follow [`DISCOVERY.md`](DISCOVERY.md) to add
-the GitHub topic and prepare the Vale Package Explorer catalog pull request.
+Follow [`DISCOVERY.md`](DISCOVERY.md) to add the GitHub topic and prepare the
+Vale Package Explorer catalog pull request.
 
 ## Provenance and license
 

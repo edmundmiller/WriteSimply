@@ -18,12 +18,13 @@ a catalog pull request:
    that this URL downloads it:
 
    ```text
-   https://github.com/edmundmiller/write-simply/releases/latest/download/WriteSimply.zip
+   https://github.com/edmundmiller/WriteSimply/releases/latest/download/WriteSimply.zip
    ```
 
-No GitHub release or tag exists yet. The working release asset is the exact
-prerequisite for catalog submission. Choose the version from the release
-policy in `README.md`; do not create a version only to satisfy the catalog.
+Release `v1.0.0` and its `WriteSimply.zip` asset are available. The working
+release asset is the exact prerequisite for catalog submission. Choose future
+versions from the release policy in `README.md`; do not create a version only
+to satisfy the catalog.
 
 ## GitHub discovery
 
@@ -45,8 +46,8 @@ After the release prerequisite passes, fork
 {
     "name": "WriteSimply",
     "description": "Flags wordy substitutions, empty framing, and long sentences.",
-    "homepage": "https://github.com/edmundmiller/write-simply",
-    "url": "https://github.com/edmundmiller/write-simply/releases/latest/download/WriteSimply.zip",
+    "homepage": "https://github.com/edmundmiller/WriteSimply",
+    "url": "https://github.com/edmundmiller/WriteSimply/releases/latest/download/WriteSimply.zip",
     "tags": [
         "style"
     ]
