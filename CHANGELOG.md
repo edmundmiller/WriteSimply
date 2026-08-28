@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+
+- Raised the `SentenceLength` threshold from 30 to 35 words to focus findings
+  on sentences more likely to need editorial revision.
+
 ## 1.0.0 - 2026-08-26
 
 ### Added

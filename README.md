@@ -29,10 +29,10 @@ guessing at the writer's purpose.
   Limitation: simple and precise are contextual. False-positive risk becomes
   high beyond the reviewed phrase list, so no broad vocabulary rule was added.
 - **Simple sentences: already covered.** `SentenceLength` supplies an
-  objective 30-word editing prompt. Benefit: it finds sentences worth
+  objective 35-word editing prompt. Benefit: it finds sentences worth
   rereading. Limitation: length is not syntactic complexity. False-positive
   risk remains in readable technical sentences, so the alert stays a
-  suggestion and the threshold is unchanged.
+  suggestion; the threshold favors higher-signal findings.
 - **Direct verbs: enabled.** `DirectVerbs` turns three exact wordy
   constructions into shorter verbs and handles their common inflections.
   Benefit: fewer words with the same meaning. Limitation: it does not detect
@@ -116,7 +116,7 @@ BasedOnStyles = WriteSimply
 - `WriteSimply.Filler` flags five empty lead-ins, including `it is worth
   noting that` and `needless to say`.
 - `WriteSimply.SentenceLength` suggests splitting sentences with more than
-  30 `\w+` tokens. The rule counts hyphenated terms as multiple tokens and
+  35 `\w+` tokens. The rule counts hyphenated terms as multiple tokens and
   numbers as tokens, matching the canonical source behavior.
 - `WriteSimply.DirectVerbs` replaces three wordy verb constructions and their
   common inflections: `make use of`, `take into consideration`, and `give

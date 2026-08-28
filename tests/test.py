@@ -98,7 +98,7 @@ def main() -> None:
                 if (
                     alert["Check"] == "WriteSimply.SentenceLength"
                     and alert["Message"]
-                    != "This sentence has 31 words; split or simplify it."
+                    != "This sentence has 36 words; split or simplify it."
                 ):
                     raise AssertionError(
                         f"unexpected sentence count: {alert['Message']!r}"

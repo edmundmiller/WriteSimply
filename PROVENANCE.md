@@ -15,7 +15,9 @@ that reviews can trace any corrections and tests back to the archive.
 
 ## Reviewed differences
 
-All source phrases, matching behavior, alert levels, and the 30-word threshold
-are preserved. One replacement was corrected: `a majority of` suggested
-`most` in the archive, which produced ungrammatical text such as `most the
-samples`; the package suggests `most of` instead.
+All source phrases, matching behavior, and alert levels are preserved. The
+sentence-length threshold is 35 words instead of the source package's 30 to
+reduce low-signal findings from sentences just over the original limit. One
+replacement was corrected: `a majority of` suggested `most` in the archive,
+which produced ungrammatical text such as `most the samples`; the package
+suggests `most of` instead.
